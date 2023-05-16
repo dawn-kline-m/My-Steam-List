@@ -32,8 +32,11 @@ body {
 
 .container {
   position: relative;
-  width: 70%;
-  padding-top: 1.5%;
+  width: 80%;
+}
+
+.before-login-main {
+  padding-top: 10%;
 }
 
 .overlay {
@@ -49,8 +52,17 @@ body {
   background-color: #2a475e;
 }
 
-.container:hover .overlay {
+.pic-container:hover .overlay {
   opacity: 0.9;
+}
+
+.card-content {
+  background-color: #2a475e;
+}
+
+.card-content p {
+  color: white;
+  font-size: 35px;
 }
 
 .text {
