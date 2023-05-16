@@ -19,12 +19,8 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-<<<<<<< HEAD
         <a href="/profile">profile</a> |
         <a href="/wishlist">wishlist</a> |
-=======
-        <a href="/profile" class="header-name">profile</a> |
->>>>>>> aec4681a066c7669642c205ce15696051855412c
         <button class="no-button" id="logout">logout</button>
         {{else}}
         <a href="/login" class="login">login</a>
@@ -34,12 +30,13 @@
         <nav class="nav-wrapper">
             <div class="nav-header">
                 <a href="/" class="header-name">mySteamlist</a>
-                <ul class="right hide-on-med-and-down">
+                <ul class="nav-list right hide-on-med-and-down p-2">
         {{#if logged_in}}
-        <a href="/profile" class="header-name">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+                  <li><a id="nav-words" href="/profile">Profile</a></li> 
+                  <li><a id="nav-words" href="/wishlist">Wishlist</a></li>
+                  <li><a id="nav-words" id="logout">Logout</a></li>
         {{else}}
-        <a href="/login" class="login">login</a>
+        <a href="/login" class="login">Login</a>
         {{/if}}
                 </ul>
             </div>
