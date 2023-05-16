@@ -1,6 +1,30 @@
 <!-- Loop over each object in the projects array -->
-{{#each favorites  as |favorite| }}
-<div class="row mb-4 favorite">
+<main class="before-login-main">
+
+<div class="container">
+  <div class="pic-container">
+  <img src="./img/steam_pic.jpg" alt="steam-logo" class="steam-logo">
+    <div class="overlay">
+    <a class="steam-logo" href="https://store.steampowered.com/"><div class="text">Click here to visit Steam website</div></a>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-content">
+      <p>mySteamlist is a webpage designed for user to add steam games to a wishlist or add it to favorite games, and also be able to rate and review the game</p>
+  </div>
+</div>
+
+</main>
+
+
+
+
+
+{{#if logged_in}}
+{{#each projects as |project| }}
+<div class="row mb-4 project">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
@@ -22,3 +46,4 @@
   </div>
 </div>
 {{/each}}
+{{/if}}
