@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Favorite, User } = require('../models');
+const { Favorite, User, Wishlist } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -50,6 +50,32 @@ router.get('/favorite', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/wishlist', async (req, res) => {
+  try {
+    // Get all wishlist and JOIN with user data
+    const wishlistData = await Wishlist.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const wishlist = wishlistData.map((wishlist) => wishlist.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('wishlist', {
+      wishlist,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.get('/favorite/:id', withAuth, async (req, res) => {
   try {
