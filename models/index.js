@@ -1,13 +1,26 @@
 const User = require('./User');
-const Project = require('./Project');
+const Favorite = require('./Favorite');
+const Wishlist = require('./WishList')
 
-User.hasMany(Project, {
+User.hasMany(Favorite, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-Project.belongsTo(User, {
-  foreignKey: 'user_id'
+Favorite.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
-module.exports = { User, Project };
+User.hasMany(Wishlist, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+})
+
+Wishlist.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+
+module.exports = { User, Favorite, Wishlist };
