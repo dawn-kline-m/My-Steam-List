@@ -1,5 +1,66 @@
-header, .project:not(:last-child) {
+header {
   border-bottom: 1px solid #ccc;
+  background-color: #1b2838;
+}
+
+body {
+  background-color: #c7d5e0;
+}
+
+.steam-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background: url(https://store.steampowered.com/);
+}
+
+.header-name {
+  color: #66c0f4;
+  font-size: 35px;
+  padding-left: 1%;
+}
+
+.login {
+  color: #66c0f4;
+  font-size: 30px;
+}
+
+.nav-wrapper {
+  background-color: #1b2838;
+}
+
+.container {
+  position: relative;
+  width: 70%;
+  padding-top: 1.5%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #2a475e;
+}
+
+.container:hover .overlay {
+  opacity: 0.9;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 .no-button {
@@ -7,7 +68,7 @@ header, .project:not(:last-child) {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: #66c0f4;
   text-decoration: none;
   font-size: 100%;
 }
@@ -15,10 +76,4 @@ header, .project:not(:last-child) {
 .no-button:hover {
   color: #065b83;
   text-decoration: underline;
-}
-
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
 }
