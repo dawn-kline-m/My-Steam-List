@@ -51,6 +51,53 @@ router.get('/favorite', withAuth, async (req, res) => {
   }
 });
 
+router.get('/review', withAuth, async (req, res) => {
+  try {
+    // Get all favorites and JOIN with user data
+    const favoriteData = await Favorite.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const favorites = favoriteData.map((favorite) => favorite.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('review', {
+      favorites,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/review/:id', withAuth, async (req, res) => {
+  try {
+    const favoriteData = await Favorite.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const favorite = favoriteData.get({ plain: true });
+
+    res.render('review', {
+      ...favorite,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/wishlist', async (req, res) => {
   try {
     // Get all wishlist and JOIN with user data
