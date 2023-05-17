@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Favorite } = require('../../models');
 const withAuth = require('../../utils/auth');
+// const rawGapi = require('node-fetch') // look into node-fetch npm package
 
 router.post('/', withAuth, async (req, res) => {
   try {
