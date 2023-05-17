@@ -86,6 +86,6 @@ While in the My FAves List the user can click on an image and a Review Page will
 
 Each member of the group submitted the following for review:
 
-The URL of the deployed application to heroku:
+The URL of the deployed application to heroku: https://thawing-peak-13246.herokuapp.com/
 
 The URL of the GitHub repository:  https://github.com/dawn-kline-m/My-Steam-List

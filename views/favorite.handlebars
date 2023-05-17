@@ -1,3 +1,5 @@
+<!-- Loop over each object in the projects array -->
+{{#each favorite as |favorite| }}
 <div class="container">
     <h4 style="padding: 15px; background-color: #1B2838; color: white">
         <center>My Faves List</center>
@@ -9,7 +11,7 @@
             </div>
             <div class="card-content">
                 <span class="card-title">{{favorite.game_title}}</span>
-                <p> <a href="#" class="btn-small indigo waves-effect waves-light">Review</a></p>
+                <p> {{favorite.review}}</p>
             </div>
             <div class="card-action">
                 <i class="material-icons red-text">star</i>
@@ -17,5 +19,5 @@
             </div>
         </div>
     </div>
-
 </div>
+{{/each}}
