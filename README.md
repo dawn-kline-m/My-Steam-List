@@ -1,96 +1,91 @@
-# Module 14 Mini-Project: Crowdfunding App
+# Project 2: My-Steam-List Interactive Full-Stack Application
 
-In this mini-project, you will work with a group to build a full-stack crowdfunding app using Node.js, Express.js, Sequelize, Handlebars.js, and MVC architecture.
+## Table of Contents
+- [Description](#description)
+- [Project Requirements](#project-requirements)
+- [Presentation Requirements](#presentation-requirements)
+- [User Specifications](#user-specifications)
+- [Functionality](#functionality)
+- [Snapshots](#snapshots)
+- [Deliverables](#deliverables)
 
-## User Stories
+## Description
 
-* As a user, I want to see a list of current projects seeking funding.
+This is an interactive full-stack application showcasing our collaborative skills and coding abilities, this particular project is a focal point of our portfolio. 
 
-* As a user, I want to be able to create an account.
+## Project Requirements
 
-* As a registered user, I want to post my own projects to ask for funding.
+This project will to create a real-world full-stack application that we will be able to showcase to potential employers. 
 
-### Acceptance Criteria
+The project fulfills the following requirements:
 
-* It's done when the `/` homepage route renders a list of all projects from the database.
+* Uses Node.js and Express.js to create a RESTful API.
 
-* It's done when the `/project/:id` route renders an individual project's details based on the route parameter id.
+* Uses Handlebars.js as the template engine.
 
-* It's done when the `/login` route renders a form to log in and a form to create a new account.
+* Uses MySQL and the Sequelize ORM for the database.
 
-* It's done when an existing user can enter their credentials on the login page to create a session on the server.
+* Has both GET and POST routes for retrieving and adding new data.
 
-* It's done when a new user can create an account on the login page and then be immediately logged in with a session.
+* Uses at least one new library, package, or technology that we haven’t discussed in class. 
+  We used Materialize - a modern responsive front-end framework based on Material Design
 
-* It's done when the `/profile` route renders the logged-in user's projects and a form to create a new project.
+* Has a folder structure that meets the MVC paradigm.
 
-* It's done when only a logged in user can visit the `/profile` route.
+* Includes authentication (express-session and cookies).
 
-* It's done when a logged in user is redirected to `/profile` when they try to visit `/login` again.
+* Protects API keys and sensitive information with environment variables.
 
-* It's done when a user on the profile page can use the form to create a new project in the database.
+* Is deployed using Heroku (with data).
 
-* It's done when a user on the profile page can select a "Delete" button to remove their project from the database.
+* Has a polished UI.
 
-* It's done when a logged-in user can select a "Logout" button to remove their session.
+* Is responsive.
 
-* It's done when the session for a logged-in user expires after a set time.
+* Is interactive (i.e., accept and respond to user input).
 
-* It's done when the API routes to create and delete posts are protected from non logged-in users.
+* Meets good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
 
-* It's done when the code is organized using MVC architecture.
+* Has a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-* It's done when the views are rendered with Handlebars.js templates.
+## Presentation Requirements
 
-## Specifications 
+The group presentation includes the following concepts:
 
-* The database models have the following fields and associations:
+* An elevator pitch: a one minute description of our application
 
-  * `User`
+* The concept: What is our user story? What was the motivation for development?
 
-    * `id`: primary key
+* The process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges were encounter? What were the successes?
 
-    * `name`
+* Demo: We showed all the features of our website.
 
-    * `email`
+* Directions for Future Development
 
-    * `password`
+## User Specifications
 
-  * `Project`
+The user would like a webpage designed to be able to add Steam games to a wishlist or add to favorite games, and also be able to rate and review the games.
 
-    * `id`: primary key
+## Functionality
+The user is presented with a home page that allows the user to securely sign up login in.
 
-    * `name`
+A first time user will sign up with a user name, email address and password, that will be encrypted.  After sign up, the user can login with their email and password.
 
-    * `description`
+After login, the user is presented with a page that contains the following options: my faves list, wish list, and the option to sign out.
 
-    * `date_created`
+The Wishlist page presents an image, game title, and price of each of the users selected wishlist items.  The user can also navigate to the My Faves List or sign out.
 
-    * `needed_funding`
+The My Faves List  presents an image, game title, rating and review of all of the users selected favorite games.  The user can also navigate to the Wishlist or sign out.
 
-    * `user_id`: foreign key that references `User.id`
+While in the My FAves List the user can click on an image and a Review Page will be presented where the user will be presented with the title, rating and image and the user can write a review.
 
-  * Users have many projects, and projects belong to a user.
+## Snapshots
+![This is the Figma model of My-Steam-List](./public/img/figma.png)  
 
-    * If a user is deleted, all associated projects are also deleted.
+## Deliverables
 
----
+Each member of the group submitted the following for review:
 
-## 💡 Hints
+The URL of the deployed application to heroku: https://thawing-peak-13246.herokuapp.com/
 
-* What tools can you use to test the existing API routes if you don't yet have a front end?
-
-* Where would you place the client-side JavaScript for capturing form data?
-
-* How can middleware help protect routes from non logged-in users?
-
-* How can Handlebars.js helpers (both built-in and custom) be used to render the desired results?
-
-## 🏆 Bonus
-
-If you have completed this activity, work through the following challenge with your partner to further your knowledge:
-
-* Add an `/edit/:id` route for logged in users to update their projects' details. Then deploy the app to Heroku!
-
----
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+The URL of the GitHub repository:  https://github.com/dawn-kline-m/My-Steam-List
