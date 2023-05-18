@@ -8,6 +8,7 @@ router.post('/', withAuth, async (req, res) => {
         game_title: req.body.game_title,
         rating: req.body.rating,
         review: req.body.review,
+        user_id: req.session.user_id,
       });
   
       res.status(200).json(newReview);
