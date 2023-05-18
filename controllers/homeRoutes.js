@@ -29,6 +29,7 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.get("/favorite", withAuth, async (req, res) => {
   try {
     // Get all favorites and JOIN with user data
@@ -49,6 +50,28 @@ router.get("/favorite", withAuth, async (req, res) => {
     // Pass serialized data and session flag into template
     res.render("favorite", {
       favorites,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/favorite/:id", withAuth, async (req, res) => {
+  try {
+    const favoriteData = await Favorite.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    const favorite = favoriteData.get({ plain: true });
+
+    res.render("favorite", {
+      ...favorite,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -132,9 +155,9 @@ router.get("/wishlist", async (req, res) => {
   }
 });
 
-router.get("/favorite/:id", withAuth, async (req, res) => {
+router.get("/wishlist/:id", withAuth, async (req, res) => {
   try {
-    const favoriteData = await Favorite.findByPk(req.params.id, {
+    const wishlistData = await Wishlist.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -143,10 +166,59 @@ router.get("/favorite/:id", withAuth, async (req, res) => {
       ],
     });
 
-    const favorite = favoriteData.get({ plain: true });
+    const wishlist = wishlistData.get({ plain: true });
 
-    res.render("favorite", {
-      ...favorite,
+    res.render("wishlist", {
+      ...wishlist,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/wishlistAdd", async (req, res) => {
+  try {
+    // Get all wishlist and JOIN with user data
+    const wishlistData = await Wishlist.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const wishlist = wishlistData.map((wishlist) =>
+      wishlist.get({ plain: true })
+    );
+
+    // Pass serialized data and session flag into template
+    res.render("wishlistAdd", {
+      wishlist,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/wishlist/:id", withAuth, async (req, res) => {
+  try {
+    const wishlistData = await Wishlist.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    const wishlist = wishlistData.get({ plain: true });
+
+    res.render("wishlist", {
+      ...wishlist,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
