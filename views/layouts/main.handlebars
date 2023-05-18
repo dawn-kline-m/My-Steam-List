@@ -24,6 +24,7 @@
                   <li><a id="nav-words" href="/favorite">Favorite</a></li>
                   <li><a id="nav-words" href="/wishlist">Wishlist</a></li>
                   <li><a id="nav-words" class="logout">Logout</a></li>
+                </ul>
         {{else}}
         <a href="/login" class="login">Login</a>
         {{/if}}
@@ -31,14 +32,19 @@
             </div>
         </nav>
     </div>
+    {{#if logged_in}}
          <ul class="sidenav" id="mobile-links">
-        <li><a href="">Home</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a id="nav-words" href="/profile">Profile</a></li> 
+                  <li><a id="nav-words" href="/favorite">Favorite</a></li>
+                  <li><a id="nav-words" href="/wishlist">Wishlist</a></li>
+                  <li><a id="nav-words" class="logout">Logout</a></li>
     </ul>
+    {{else}}
+         <ul class="sidenav" id="mobile-links">
+        <a href="/login" class="login">Login</a>
+         </ul>
+    {{/if}}
     </header>
-
-
 
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
@@ -53,7 +59,13 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
 </body>
 
 </html>
