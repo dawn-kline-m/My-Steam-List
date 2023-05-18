@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 router.get("/", withAuth, async (req, res) => {
   const key = process.env.API_KEY;
 
-  const url = `https://rawg.io/api/games?search=minecraft&page_size=10&page=1&key=${key}`;
+  const url = `https://rawg.io/api/games?search=${game}&page_size=10&page=1&key=${key}`;
   const options = {
     method: "GET",
   };
