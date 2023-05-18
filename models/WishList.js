@@ -19,7 +19,11 @@ Wishlist.init(
       type: DataTypes.STRING,
     },
     price: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.INTEGER,
+    },
+    review: {
+      type:DataTypes.STRING,
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
