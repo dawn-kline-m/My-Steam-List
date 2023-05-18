@@ -129,6 +129,7 @@ router.get("/review/:id", withAuth, async (req, res) => {
 });
 
 router.get("/wishlist", async (req, res) => {
+  console.log("user_id", req.session.user_id);
   try {
     // Get all wishlist and JOIN with user data
     const wishlistData = await Wishlist.findAll({
@@ -138,6 +139,9 @@ router.get("/wishlist", async (req, res) => {
           attributes: ["name"],
         },
       ],
+      where: {
+        user_id: req.session.user_id,
+      },
     });
 
     // Serialize data so the template can read it
