@@ -11,25 +11,13 @@
 </head>
 
 <body>
-  {{!-- <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/" class="header-name">mySteamlist</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <a href="/wishlist">wishlist</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login" class="login">login</a>
-        {{/if}}
-      </nav> --}}
     <div class="navbar-fixed">
         <nav class="nav-wrapper">
             <div class="nav-header">
                 <a href="/" class="header-name">mySteamlist</a>
+                 <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                  <i class="material-icons">menu</i>
+                 </a>
                 <ul class="nav-list right hide-on-med-and-down p-2">
         {{#if logged_in}}
                   <li><a id="nav-words" href="/profile">Profile</a></li> 
@@ -43,6 +31,11 @@
             </div>
         </nav>
     </div>
+         <ul class="sidenav" id="mobile-links">
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
     </header>
 
 
