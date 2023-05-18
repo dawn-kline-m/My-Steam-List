@@ -1,9 +1,9 @@
-const router = require('express').Router();
-const { Favorite } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { Favorite } = require("../../models");
+const withAuth = require("../../utils/auth");
 // const rawGapi = require('node-fetch') // look into node-fetch npm package
 
-router.post('/', withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newFavorite = await Favorite.create({
       ...req.body,
@@ -16,7 +16,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const favoriteData = await Favorite.destroy({
       where: {
@@ -26,7 +26,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!favoriteData) {
-      res.status(404).json({ message: 'No favorite found with this id!' });
+      res.status(404).json({ message: "No favorite found with this id!" });
       return;
     }
 
