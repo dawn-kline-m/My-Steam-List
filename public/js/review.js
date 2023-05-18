@@ -24,4 +24,6 @@ const newReviewHandler = async (event) => {
   }
 };
 
-document.querySelector("#createButton").addEventListener("click", newReviewHandler);
+document
+  .querySelector(".new-favorite-form")
+  .addEventListener("submit", newReviewHandler);
