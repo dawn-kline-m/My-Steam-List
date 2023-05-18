@@ -19,10 +19,9 @@ const newReviewHandler = async (event) => {
     } else {
       alert("Failed to create review");
     }
+
+    console.log(response); // Move this line inside the if-else block
   }
-  console.log(newReviewHandler);
 };
 
-document
-  .querySelector("createButton")
-  .addEventListener("click", newReviewHandler);
+document.querySelector("#createButton").addEventListener("click", newReviewHandler);
