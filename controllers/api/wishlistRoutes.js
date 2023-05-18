@@ -1,8 +1,8 @@
-const router = require('express').Router();
-const { Wishlist } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { Wishlist } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-router.post('/', withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newWishList = await Wishlist.create({
       ...req.body,
@@ -15,7 +15,9 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
+  // console.log("trying to delete in routes");
+  // console.log("userID?", req.session.user_id);
   try {
     const wishListData = await Wishlist.destroy({
       where: {
@@ -25,13 +27,14 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!wishListData) {
-      res.status(404).json({ message: 'No game found with this id!' });
+      res.status(404).json({ message: "No game found with this id!" });
       return;
     }
 
     res.status(200).json(wishListData);
   } catch (err) {
-    res.status(500).json(err);
+    console.log(err);
+    res.status(500).json(err.message);
   }
 });
 

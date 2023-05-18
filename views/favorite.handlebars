@@ -1,28 +1,28 @@
-<!-- Loop over each object in the projects array -->
-{{!-- {{#each favorites as |favorite| }} --}}
-<div class="container">
-  <h4 style="padding: 15px; background-color: #1B2838; color: white">
-    <center>My Faves List</center>
-  </h4>
-  <h2 class="add-list"><a href="/review"><i
-        class="add-list small material-icons"
-      >add</i></a>
-    Add To List
-  </h2>
-  <div class="col s12 m6 l4">
-    <div class="card">
-      <div class="card-image">
-        <img src="{{favorite.image}}" alt="" />
-      </div>
-      <div class="card-content">
-        <span class="card-title">{{favorite.game_title}}</span>
-        <p> {{favorite.review}}</p>
-      </div>
-      <div class="card-action">
-        <i class="material-icons red-text">star</i>
-        <a href="" class="indigo-text">{{favorite.rating}}</a>
-      </div>
+<div class="my-container">
+    <h4 style="padding: 15px; background-color: #1B2838; color: white">
+        <center>My Faves List</center>
+    </h4>
+    <h2 class="add-list"><a href="/review"><i class="add-list small material-icons">add</i></a>
+        Add To List
+    </h2>
+
+    <div class="row">
+        {{#each favorites as |favorite| }}
+        <div class="col s12 m6 l4">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src={{favorite.image}} alt="">
+                </div>
+                <div class="card-content">
+                    <p class="my-card-title"><span class="bold">{{favorite.game_title}}</span> </p>
+                    <p class="truncate"> {{favorite.review}}</p>
+                </div>
+                <div class="card-action">
+                    <i class="material-icons red-text prefix">star</i>
+                    <i class=" indigo-text">RATING: {{favorite.rating}}</i>
+                </div>
+            </div>
+        </div>
+        {{/each}}
     </div>
-  </div>
 </div>
-{{!-- {{/each}} --}}

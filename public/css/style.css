@@ -59,11 +59,20 @@ body {
 
 .card-content {
   background-color: #2a475e;
+  color: rgb(170, 196, 227);
+
+
 }
 
 .card-content p {
+  color: rgb(247, 250, 254);
+  font-size: 15px;
+}
+
+.my-card-title span.bold {
   color: white;
-  font-size: 35px;
+  font-size: 25px;
+  font-weight: 600;
 }
 
 #nav-words {
@@ -72,9 +81,9 @@ body {
 }
 
 .add-list {
-text-align: center;
-color:#66C0F4;
-text-shadow: 0px 3px #065b83;
+  text-align: center;
+  color: #66C0F4;
+  text-shadow: 0px 3px #065b83;
 }
 
 .text {
