@@ -20,9 +20,8 @@ const newReviewHandler = async (event) => {
       alert("Failed to create review");
     }
   }
-  console.log(newReviewHandler);
 };
 
 document
-  .querySelector("createButton")
-  .addEventListener("click", newReviewHandler);
+  .querySelector(".new-favorite-form")
+  .addEventListener("submit", newReviewHandler);
