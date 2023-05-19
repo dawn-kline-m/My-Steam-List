@@ -6,7 +6,7 @@ const favoriteData = require('./FavoriteData.json');
 const wishlistData = require('./WishListData.json')
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ force: false });
 
   const users = await User.bulkCreate(userData, {
     individualHooks: true,
