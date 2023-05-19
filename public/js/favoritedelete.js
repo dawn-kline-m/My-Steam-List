@@ -19,3 +19,8 @@ const delButtonFavorite = async (event) => {
 document
   .querySelector(".my-container")
   .addEventListener("click", delButtonFavorite);
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".materialboxed");
+  var instances = M.Materialbox.init(elems);
+});

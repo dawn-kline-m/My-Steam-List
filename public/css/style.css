@@ -7,6 +7,14 @@ body {
   background-color: #c7d5e0;
 }
 
+#hometext {
+  font-size: 35px;
+}
+
+#rating-text{
+  font-size: 20px;
+}
+
 .steam-logo {
   display: block;
   margin-left: auto;

@@ -1,27 +1,28 @@
-<div class="container">
-    <h4>My WishList </h4>
+<div class="fav-container">
+  <h4 style="padding: 15px; background-color: #1B2838; color: white">
+    <center>My Wishlist</center>
+  </h4>
     <h2 class="add-list"><a href="/wishlistAdd"><i class="add-list small material-icons">add</i></a>
         Add To WishList
     </h2>
-    {{#each wishlist as |wishlist|}}
-    <div class="wishlist-list">
         <div class="row">
-            <div class="col s12 m6">
-                <div class="card">
+    {{#each wishlist as |wishlist|}}
+            <div class="col s12 m6 l4">
+                <div class="card medium">
                     <div class="card-image">
-                        <img src="https://tse2.mm.bing.net/th?id=OIP.Nc-vUSJ0xkDw3bYvaeAh-QHaE8&pid=Api" alt="">
+                        <img class="materialboxed" src={{wishlist.image}} alt="">
+                    </div>
+                    <div class="card-content">
                         <button class="halfway-fab btn-floating pink pulse" data-id='{{wishlist.id}}'
                             id="deleteWishlistButton">
                             <i class="material-icons" data-id='{{wishlist.id}}'>delete</i>
                         </button>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title">{{wishlist.game_title}}</span>
+                        <span class="card-title white-text bold">{{wishlist.game_title}}</span>
                         <p>{{wishlist.review}}</p>
                     </div>
                     <div class="card-action">
-                        <a href="">Game price</a>
-                        <a href="">${{wishlist.price}}</a>
+                        <a class="black-text">Game price</a>
+                        <a class="black-text">${{wishlist.price}}</a>
                     </div>
                 </div>
             </div>
