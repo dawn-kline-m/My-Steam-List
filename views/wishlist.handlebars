@@ -1,33 +1,33 @@
 <div class="fav-container">
-  <h4 style="padding: 15px; background-color: #1B2838; color: white">
-    <center>My Wishlist</center>
-  </h4>
+    <h4 style="padding: 15px; background-color: #1B2838; color: white">
+        <center>My Wishlist</center>
+    </h4>
     <h2 class="add-list"><a href="/wishlistAdd"><i class="add-list small material-icons">add</i></a>
         Add To WishList
     </h2>
-        <div class="row">
-    {{#each wishlist as |wishlist|}}
-            <div class="col s12 m6 l4">
-                <div class="card medium">
-                    <div class="card-image">
-                        <img class="materialboxed" src={{wishlist.image}} alt="">
-                    </div>
-                    <div class="card-content">
-                        <button class="halfway-fab btn-floating pink pulse" data-id='{{wishlist.id}}'
-                            id="deleteWishlistButton">
-                            <i class="material-icons" data-id='{{wishlist.id}}'>delete</i>
-                        </button>
-                        <span class="card-title white-text bold">{{wishlist.game_title}}</span>
-                        <p>{{wishlist.review}}</p>
-                    </div>
-                    <div class="card-action">
-                        <a class="black-text">Game price</a>
-                        <a class="black-text">${{wishlist.price}}</a>
-                    </div>
+    <div class="row">
+        {{#each wishlist as |wishlist|}}
+        <div class="col s12 m6 l4">
+            <div class="card medium">
+                <div class="card-image">
+                    <img class="materialboxed" src={{wishlist.image}} alt="">
+                </div>
+                <div class="card-content">
+                    <button class="halfway-fab btn-floating pink pulse" data-id='{{wishlist.id}}'
+                        id="deleteWishlistButton">
+                        <i class="material-icons" data-id='{{wishlist.id}}'>delete</i>
+                    </button>
+                    <span class="card-title white-text bold">{{wishlist.game_title}}</span>
+                    <p>{{wishlist.review}}</p>
+                </div>
+                <div class="card-action">
+                    <a class="black-text">Game price</a>
+                    <a class="black-text">${{wishlist.price}}</a>
                 </div>
             </div>
+        </div>
 
-            {{/each}}
+        {{/each}}
 
-            <script src="./js/wishlistdelete.js"></script>
-            <!-- Compiled and minified JavaScript -->
+        <script src="./js/wishlistdelete.js"></script>
+        <!-- Compiled and minified JavaScript -->
