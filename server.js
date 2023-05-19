@@ -14,10 +14,12 @@ const PORT = process.env.PORT || 3001;
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
+let secretPassword = process.env.SESS_PASSWORD
+
 const sess = {
-  secret: 'Super secret secret',
+  secret: secretPassword,
   cookie: {
-    maxAge: 300000,
+    maxAge: 900000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
