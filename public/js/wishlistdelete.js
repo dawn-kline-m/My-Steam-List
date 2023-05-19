@@ -19,3 +19,8 @@ const delButtonWishlist = async (event) => {
 document
   .querySelector(".container")
   .addEventListener("click", delButtonWishlist);
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".materialboxed");
+  var instances = M.Materialbox.init(elems);
+});
