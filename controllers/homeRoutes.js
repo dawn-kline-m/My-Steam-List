@@ -202,7 +202,7 @@ router.get("/wishlistAdd", async (req, res) => {
     );
 
     // Pass serialized data and session flag into template
-    res.render("wishlistAdd", {
+    res.render("wishlistadd", {
       wishlist,
       logged_in: req.session.logged_in,
     });
