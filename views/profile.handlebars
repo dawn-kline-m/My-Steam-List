@@ -1,21 +1,32 @@
-<div class="row">
-  <div class="col-auto">
-    <h1>Welcome to Your Profile, {{name}}!</h1>
-  </div>
-</div>
+<div class="my-container">
+  <h4 style="padding: 15px; background-color: #1B2838; color: white">
+    <center>Welcome to Your Profile, {{name}}!</center>
+  </h4>
 
 <div class="container">
-        <ul class="collection with-header">
-            <li class="collection-header" style="background-color: #1b2838; margin-bottom: 20px; color: #66C0F4; font-size: 6em;">
+    <section class="container section" id="photos">
+        <div class="col s12 l6">
+            <h6 class="collection-header" style="margin-bottom: 20px; color: #66C0F4; font-size: 6em;">
                 <a href="/favorite">My Faves List</a>
-            </li>
-            <li class="collection-header" style="background-color: #1b2838; margin-bottom: 20px; color: #66C0F4; font-size: 6em;">
-                <a href="/wishlist">Wish List</a>
-            </li>
-            <li class="collection-header" style="background-color: #1b2838; color: #66C0F4; font-size: 6em;">
-                <a>Friends Activity</a>
-            </li>
-        </ul>
-    </div>
-
+            </h6>
+            <p>Add your favorite game that you find enjoyable and want to remember later on!</p>
+        </div>
+        <div class="col s12 l8">
+            <a href="/favorite">
+                <img src="/img/controller.avif" alt="" class="responsive-img">
+            </a>
+        </div>
+             <div class="col s12 l6">
+            <h6 class="collection-header" style="margin-bottom: 20px; color: #66C0F4; font-size: 6em;">
+                <a href="/wishlist">My Wishlist</a>
+            </h6>
+            <p>Add your favorite game that you find enjoyable and want to remember later on!</p>
+        </div>
+        <div class="col s12 l8">
+            <a href="/wishlist">
+                <img src="/img/controller2.avif" alt="" class="responsive-img">
+            </a>
+        </div>
+    </section>
+    
 <script src="./js/profile.js"></script>

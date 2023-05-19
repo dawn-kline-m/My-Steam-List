@@ -15,37 +15,9 @@
   <div class="card">
     <div class="card-content">
       <p id="hometext">mySteamlist is a webpage designed for user to add steam
-        games to a wishlist or add it to favorite games, and also be able to
-        rate and review the game</p>
+        games to a wishlist or add it to favorite games! You will be able to
+        rate and review each game you add!</p>
     </div>
   </div>
 
 </main>
-
-{{#if logged_in}}
-  {{#each projects as |project|}}
-    <div class="row mb-4 project">
-      <div class="col-md-5">
-        <h2>
-          <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-          {{{get_emoji}}}
-          <a href="/favorite/{{favorite.id}}">{{favorite.name}}</a>
-        </h2>
-        <p>
-          <span for="img" aria-label="money">💲</span>
-          <!-- Pass needed_funding value to the helper function -->
-          <span class="dollar-amount">{{format_amount
-              favorite.needed_funding
-            }}</span>
-          needed!
-        </p>
-        <p>Created by {{favorite.user.name}}</p>
-      </div>
-      <div class="col-md-7">
-        <p>
-          {{favorite.description}}
-        </p>
-      </div>
-    </div>
-  {{/each}}
-{{/if}}
